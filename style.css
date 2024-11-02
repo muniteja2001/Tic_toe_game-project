@@ -1,0 +1,212 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body and Background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Main Container */
+.whole {
+    border: 2px solid greenyellow;
+    border-radius: 20px;
+    background-color: rgb(127, 187, 255);
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.whole:hover {
+    transform: scale(1.02);
+}
+
+/* Header */
+.header {
+    background-color: #007bff;
+    font-size: 28px;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Game Grid Container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Game Grid Items */
+.items {
+    border: 2px solid red;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    color: #444;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.items:hover {
+    background-color: #f8d7da;
+    transform: scale(1.1);
+}
+
+/* Winner Highlight */
+.items.winner {
+    background-color: lightgreen;
+    animation: winnerAnimation 1s infinite;
+}
+
+/* Animation Keyframe for Winner */
+@keyframes winnerAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Grid for Two Columns */
+.body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Turn Display and Reset Button */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Turn Indicator */
+.turn {
+    font-size: 24px;
+    color: #ff6f61;
+    animation: fadeIn 0.5s;
+}
+
+/* Reset Button */
+button.reset {
+    height: 50px;
+    width: 200px;
+    background-color: #ff4757;
+    color: white;
+    font-size: large;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button.reset:hover {
+    background-color: #ff6b81;
+    transform: scale(1.05);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .whole {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 80px);
+        gap: 8px;
+    }
+
+    .items {
+        height: 80px;
+        width: 80px;
+        font-size: large;
+    }
+
+    button.reset {
+        height: 45px;
+        width: 180px;
+        font-size: medium;
+    }
+
+    .turn {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .body {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 70px);
+        gap: 5px;
+    }
+
+    .items {
+        height: 70px;
+        width: 70px;
+        font-size: medium;
+    }
+
+    .turn {
+        font-size: 18px;
+    }
+
+    button.reset {
+        height: 40px;
+        width: 150px;
+        font-size: small;
+    }
+}
+
+/* Fade In Animation for Turn Indicator */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* GIF and Image Section */
+.animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.animation img,
+#gif {
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.animation img:hover,
+#gif:hover {
+    transform: scale(1.1);
+}
